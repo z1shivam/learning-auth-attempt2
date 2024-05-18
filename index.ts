@@ -127,6 +127,10 @@ app.post("/login", async (req, res) => {
   }
 });
 
+app.get("/logout", (req, res) => {
+  res.clearCookie("auth-token").json({ message: "User logged out" });
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
